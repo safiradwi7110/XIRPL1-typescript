@@ -16,9 +16,9 @@
  * 3. Display the registration data using console.log.(Tampilkan data pendaftaran menggunakan console.log.)
  */
 
-type Registration = {
-    studentId: string;
-    fullName: string;
+type Registration = { // type untuk merekam informasi pendaftaran
+    studentId: string; // ID siswa
+    fullName: string; // nama lengkap siswa
     gradeLevel: string;
     courseId: string;
     courseTitle: string;
@@ -28,10 +28,10 @@ type Registration = {
     isPaymentCompleted: boolean;
 };
 
-const registration1: Registration = {
-    studentId: "S001",
-    fullName: "Alice Johnson",  
-    gradeLevel: "Freshman",
+const registration1: Registration = { // pencatatan data pendaftaran pertama
+    studentId: "S001", // ID siswa
+    fullName: "Alice Johnson",  // nama lengkap siswa
+    gradeLevel: "Freshman", 
     courseId: "C001",
     courseTitle: "Introduction to TypeScript",
     instructorName: "John Doe",
@@ -40,7 +40,7 @@ const registration1: Registration = {
     isPaymentCompleted: true,
 };
 
-const registration2: Registration = {
+const registration2: Registration = { // pencatatan data pendaftaran kedua
     studentId: "S002",
     fullName: "Bob Smith",
     gradeLevel: "Sophomore",
@@ -52,7 +52,7 @@ const registration2: Registration = {
     isPaymentCompleted: false,
 };
 
-const registration3: Registration = {
+const registration3: Registration = { // pencatatan data pendaftaran ketiga
     studentId: "S003",
     fullName: "Charlie Brown",
     gradeLevel: "Junior",

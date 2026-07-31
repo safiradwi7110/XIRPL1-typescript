@@ -19,17 +19,17 @@
  * 3. Display the participant data using console.log.(Tampilkan data peserta menggunakan console.log.)
  */
 
-type Participant = {
-    id: string;
-    name: string;
-    age: number;
-    hasPaid: boolean;
+type Participant = { // type untuk merekam informasi peserta
+    id: string; // ID peserta
+    name: string; // nama peserta
+    age: number; // usia peserta
+    hasPaid: boolean; // status pembayaran peserta (true jika sudah membayar, false jika belum membayar)
 };
 
-const participants: Participant[] = [
-    { id: "ST001", name: "Ahmad Fauzi", age: 16, hasPaid: true },
-    { id: "ST002", name: "Siti Nurhaliza", age: 17, hasPaid: false },
-    { id: "ST003", name: "Budi Santoso", age: 16, hasPaid: true },
+const participants: Participant[] = [ // array untuk menyimpan data peserta
+    { id: "ST001", name: "Ahmad Fauzi", age: 16, hasPaid: true }, // pencatatan data peserta pertama
+    { id: "ST002", name: "Siti Nurhaliza", age: 17, hasPaid: false }, // pencatatan data peserta kedua
+    { id: "ST003", name: "Budi Santoso", age: 16, hasPaid: true }, // pencatatan data peserta ketiga
 ];
 
-console.log("Participants Data:", participants);
+console.log("Participants Data:", participants); // menampilkan data peserta ke dalam console

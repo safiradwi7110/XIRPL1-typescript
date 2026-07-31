@@ -35,39 +35,39 @@
 
  */
 
-const mechanicalKeyboardPrice: number = 850000;
-const wirelessMousePrice: number = 275000;
-const monitorStandPrice: number = 420000;
-const mechanicalKeyboardQuantity: number = 1;
-const wirelessMouseQuantity: number = 2;
-const monitorStandQuantity: number = 1;
+const mechanicalKeyboardPrice: number = 850000; // Harga keyboard mekanik
+const wirelessMousePrice: number = 275000; // Harga mouse nirkabel
+const monitorStandPrice: number = 420000; // Harga dudukan monitor
+const mechanicalKeyboardQuantity: number = 1; // Jumlah keyboard mekanik
+const wirelessMouseQuantity: number = 2; // Jumlah mouse nirkabel
+const monitorStandQuantity: number = 1; // Jumlah dudukan monitor
 
-const voucherValue: number = 100000;
-const isPremiumMember: boolean = true;
+const voucherValue: number = 100000; // Nilai voucher yang digunakan oleh pelanggan
+const isPremiumMember: boolean = true; // Status keanggotaan premium pelanggan
 const rewardPointRate: number = 50000; // 1 point for every Rp50,000 spent
 
-const productSubtotal: number =
-  mechanicalKeyboardPrice * mechanicalKeyboardQuantity +
-  wirelessMousePrice * wirelessMouseQuantity +
-  monitorStandPrice * monitorStandQuantity;
+const productSubtotal: number = // Subtotal produk
+  mechanicalKeyboardPrice * mechanicalKeyboardQuantity + // Subtotal keyboard mekanik
+  wirelessMousePrice * wirelessMouseQuantity + // Subtotal mouse nirkabel
+  monitorStandPrice * monitorStandQuantity; // Subtotal dudukan monitor
 
-const membershipDiscount: number = isPremiumMember ? productSubtotal * 0.1 : 0;
-const voucherDeduction: number = voucherValue;
-const paymentBeforeTax: number = productSubtotal - membershipDiscount - voucherDeduction;
-const vat: number = paymentBeforeTax * 0.11;
-const finalPayment: number = paymentBeforeTax + vat;
+const membershipDiscount: number = isPremiumMember ? productSubtotal * 0.1 : 0; // Diskon keanggotaan jika pelanggan adalah anggota premium
+const voucherDeduction: number = voucherValue; // Potongan voucher yang digunakan oleh pelanggan
+const paymentBeforeTax: number = productSubtotal - membershipDiscount - voucherDeduction; // Pembayaran sebelum pajak setelah dikurangi diskon keanggotaan dan potongan voucher
+const vat: number = paymentBeforeTax * 0.11; // Menghitung PPN sebesar 11% dari pembayaran sebelum pajak
+const finalPayment: number = paymentBeforeTax + vat; // Pembayaran akhir setelah ditambahkan PPN
 
-const rewardPoints: number = Math.floor(paymentBeforeTax / rewardPointRate);
-const isEligibleForFreeShipping: boolean =
-    isPremiumMember || paymentBeforeTax > 1500000;
+const rewardPoints: number = Math.floor(paymentBeforeTax / rewardPointRate); // Menghitung poin hadiah berdasarkan pembayaran sebelum pajak dan tarif poin hadiah
+const isEligibleForFreeShipping: boolean = // Menentukan apakah pelanggan berhak mendapatkan pengiriman gratis
+    isPremiumMember || paymentBeforeTax > 1500000; // Pengiriman gratis tersedia jika pelanggan adalah anggota premium atau pembayaran sebelum pajak melebihi Rp1.500.000
 
-console.log(`Product Subtotal: Rp${productSubtotal.toLocaleString()}`);
-console.log(`Membership Discount: Rp${membershipDiscount.toLocaleString()}`);
-console.log(`Voucher Deduction: Rp${voucherDeduction.toLocaleString()}`);
-console.log(`Payment Before Tax: Rp${paymentBeforeTax.toLocaleString()}`);
-console.log(`VAT: Rp${vat.toLocaleString()}`);
-console.log(`Final Payment: Rp${finalPayment.toLocaleString()}`);
-console.log(`Reward Points: ${rewardPoints}`);
-console.log(`Eligible for Free Shipping: ${isEligibleForFreeShipping ? "Yes" : "No"}`);
+console.log(`Product Subtotal: Rp${productSubtotal.toLocaleString()}`); // Menampilkan subtotal produk
+console.log(`Membership Discount: Rp${membershipDiscount.toLocaleString()}`); // Menampilkan diskon keanggotaan
+console.log(`Voucher Deduction: Rp${voucherDeduction.toLocaleString()}`); // Menampilkan potongan voucher
+console.log(`Payment Before Tax: Rp${paymentBeforeTax.toLocaleString()}`);// Menampilkan pembayaran sebelum pajak
+console.log(`VAT: Rp${vat.toLocaleString()}`); // Menampilkan PPN
+console.log(`Final Payment: Rp${finalPayment.toLocaleString()}`); // Menampilkan pembayaran akhir
+console.log(`Reward Points: ${rewardPoints}`); // Menampilkan poin hadiah
+console.log(`Eligible for Free Shipping: ${isEligibleForFreeShipping ? "Yes" : "No"}`); // Menampilkan apakah pelanggan berhak mendapatkan pengiriman gratis
 
 
