@@ -32,5 +32,29 @@
  * - Determine the scholarship amount using the ternary operator.(Tentukan jumlah beasiswa menggunakan operator ternary.)
  * - Calculate the remaining scholarship budget.(Hitung sisa anggaran beasiswa.)
  * - Display whether the student is accepted.(Tampilkan apakah mahasiswa diterima.)
- */
+*/
+
+const studentName: string = "Alya Putri"; 
+const gpa: number = 3.89; 
+const familyIncome: number = 4200000;
+const competitionCount: number = 4;
+const hasDisciplinaryRecord: boolean = false;
+const documentsComplete: boolean = true;
+
+const scholarshipBudget: number = 500000000;
+
+const isEligibleForScholarship: boolean =
+    gpa >= 3.75 &&
+    familyIncome < 5000000 &&
+    competitionCount >= 3 &&
+    !hasDisciplinaryRecord &&
+    documentsComplete;
+
+const scholarshipAmount: number = isEligibleForScholarship ? 12000000 : 0;
+const remainingScholarshipBudget: number = scholarshipBudget - scholarshipAmount;
+
+console.log(`Student Name: ${studentName}`);
+console.log(`Eligible for Scholarship: ${isEligibleForScholarship}`);
+console.log(`Scholarship Amount: Rp${scholarshipAmount.toLocaleString()}`);
+console.log(`Remaining Scholarship Budget: Rp${remainingScholarshipBudget.toLocaleString()}`);
 
